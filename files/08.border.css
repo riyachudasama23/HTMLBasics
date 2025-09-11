@@ -1,0 +1,38 @@
+body{
+  background-color: rgb(161, 235, 250);
+}
+
+.main-container{
+  border: 1px solid rgb(89, 3, 91);
+  border-radius: 20px;
+  padding: 20px 20px;
+  margin: 190px 10px;
+  background-color: azure;
+}
+
+.part1{
+  padding: 10px 0px;
+  margin-bottom: 30px;
+}
+
+.part2{
+  border-bottom: 5px double rgb(16, 170, 179);
+  /* border-style: double; */
+  padding: 10px 40px;
+  border-radius: 20px;
+  margin-bottom: 20px;
+}
+
+.part3{
+  border: 2px dashed rgb(16, 170, 179);
+  outline: 2px solid grey;
+  outline-offset: 5px;
+  padding: 10px 10px;
+  /* margin-bottom: 30px; */
+}
+
+.mini{
+  margin: 10px 10px;
+  border: 2px solid rgb(163, 217, 45);
+  padding: 20px 20px;
+}
