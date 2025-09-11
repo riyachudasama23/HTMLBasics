@@ -1,0 +1,31 @@
+body{
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 20px;
+}
+
+.box1{
+  background-color: palevioletred;
+  width: 150px;
+  height: 80px;
+  top: 20px;
+  right: 150px;
+  position: absolute;
+  transform: skewX(50deg);
+}
+
+#box2{
+  background-color: plum;
+  height: 130px;
+  width: 80px;
+  position: relative;
+  left: 700px;
+  top: 150px;
+  transform: rotate(90deg);
+}
+
+#box3{
+  background-color: blue;
+  color: white;
+  height: 150px;
+  width: 150px;
+}
