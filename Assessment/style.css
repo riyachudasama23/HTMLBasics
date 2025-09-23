@@ -43,6 +43,8 @@ li:hover{
   justify-content: center;
   display: flex;
   background: image-set("./images/banner.png");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .text{
@@ -135,6 +137,3 @@ h1{
 .info{
   text-align: justify;
 }
-
-
-
