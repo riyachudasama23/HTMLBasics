@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    function brushTeeth(){
+      return new Promise((resolve) => {
+        setTimeout(resolve(`Brushed teeth`),1000);
+      });
+    }
+
+    function haveBreakfast(){
+      return new Promise((resolve) => {
+        setTimeout(resolve(`Had breakfast`),1500);
+      });
+    }
+
+    function goToWork(){
+      return new Promise((resolve) => {
+        setTimeout(resolve(`Reached office`),1000);
+      });
+    }
+
+    async function mainFun(){
+      const brush = await brushTeeth();
+      console.log(brush);
+      const breakfast = await haveBreakfast();
+      console.log(breakfast);
+      const work = await goToWork();
+      console.log(work);
+    }
+
+    // console.log(setTimeout(()=>{
+    //     console.log("whyyy"), 900
+    // }));
+
+    mainFun();
+
+    
+  </script>
+</body>
+</html>

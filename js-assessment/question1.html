@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>Coffee Order Application</h1>
+  <button onclick="takeOrder()">Start Taking Orders</button>
+
+  <div id="display"></div>
+
+  <script>
+    function takeOrder(){
+
+      let mainArray = [];
+
+      let namep = prompt(`$name`? `Enter name:` : null);
+      console.log(`name: ${namep}`);
+      mainArray.push(namep);
+
+      let itemp = prompt(`items`? `Enter coffee items:` : null);
+      if(itemp === ""){
+        alert(`No items entered. Order skipped!`);
+      }
+      console.log(itemp);
+
+      let itemArray = itemp.split();
+      console.log(`items: ${itemArray}`);
+      mainArray.push(itemArray);
+
+      console.log(mainArray);
+
+      const allOrders = {
+        'name': `${namep}`,
+        'orders' : `${itemArray}`
+      };
+
+      console.log(allOrders);
+
+      // let displayItem = getElementByValue('display');
+      // itemArray.map(item){
+      //   `<div>$item<div>`
+      // }
+    }
+    // let displayItem = getElementById('display');
+
+    //   `Hello $namep`
+    //   itemArray.map(item)(
+    //     `<div>$item<div>`
+    //     );
+
+    //   console.log(displayItem);
+
+    
+  </script>
+</body>
+</html>
