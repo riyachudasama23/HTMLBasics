@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Javascript Assessement 2</title>
+</head>
+<body>
+  <h1>Smart Kitchen Assistant App</h1>
+
+  <button onclick="startRoutine()">Start Routine</button>
+  <button onclick="reset()">Reset</button>
+  <br><br>
+  <div class="output">Click Start Routine to begin</div>
+
+  <script>
+
+    let outputValue = document.querySelector('.output');
+    let listArr = ["Prepare Breakfast","Wash Dishes", "Make Coffee"];
+
+    function msgLog(message){
+      outputValue.innerHTML += `${message}<br>`;
+    }
+
+    function displayContent(){
+      outputValue.innerHTML = "";
+      msgLog("Starting Routine<br>");
+      msgLog("Today's Task");
+      listArr.map((item, index) => 
+      (outputValue.innerHTML += `${index+1})${item}<br>`));
+      msgLog("<br>Starting Now...<br>");
+    }
+
+    function reset(){
+      outputValue.innerHTML = "Click Start Routine to begin"
+    }
+
+    function prepareBreakfast(){
+      return new Promise((resolve, reject) => {
+        setTimeout(() => {
+          const success = true;
+          if(success){
+            resolve("Prepare Breakfast");
+          }else{
+            reject("Error: Preparing Breakfast failed");
+          }
+        }, 1000);
+      });
+    }
+    
+    function washDishes(){
+      return new Promise((resolve, reject) => {
+        setTimeout(() => {
+          const success = true;
+          if(success){
+            resolve("Wash Dish");
+          }else{
+            reject("Error: Washing dishes failed");
+          }
+        }, 1500);
+      });
+    } 
+    
+    function makeCoffee(){
+      return new Promise((resolve, reject) => {
+        setTimeout(() => {
+          const success = true;
+          if(success){
+            resolve("Make Coffee");
+          }else{
+            reject("Error: Making coffee failed");
+          }
+        }, 1000);
+      });
+    }
+
+    async function startRoutine() {
+      
+      let display = await displayContent();
+
+      console.log(listArr);
+      listArr.map((item, index) => 
+      console.log(`${index+1})${item}`));
+
+      try{
+        let step1 = await prepareBreakfast();
+        console.log(step1);
+        msgLog(step1);
+
+        let step2 = await washDishes();
+        console.log(step2);
+        msgLog(step2);
+
+        let step3 = await makeCoffee();
+        console.log(step3);
+        msgLog(step3);
+
+        msgLog(`<br>Routine is Successfully Completed!!`);
+      }catch(error){
+        msgLog(error)
+      }
+    }
+  </script>
+</body>
+</html>
